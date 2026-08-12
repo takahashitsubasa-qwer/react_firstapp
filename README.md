@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# 🌤️ リアルタイム天気＆メモアプリ (Weather & Note App)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+都市ごとの現在の天気をリアルタイムで確認し、その日の予定や服装などのメモを記録できる Web アプリケーションです。
 
-## Available Scripts
+React と Tailwind CSS で構築されており、将来的なバックエンド（FastAPI）との連携を見据えた設計になっています。
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 主な機能 (Features)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*   **リアルタイム天気表示**
+    *   都市名（例: Tokyo, Osaka）を入力して検索
+    *   現在の天気、気温、湿度、風速、天気アイコンの表示
+    *   天候（晴れ・雨・雪など）に応じた背景デザインの動的切り替え
+*   **お天気メモ機能**
+    *   都市ごとのメモ作成・削除（「傘が必要」「厚手のコートを着る」など）
+    *   ブラウザ（Local Storage）への自動保存
+*   **レスポンシブデザイン**
+    *   Tailwind CSS を使用した、PC・スマートフォン両対応のモダンな UI
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ 使用技術 (Tech Stack)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### フロントエンド
+*   **React** (JavaScript / CRA)
+*   **Tailwind CSS** (スタイリング)
+*   **Lucide React / Heroicons** (アイコン表示)
 
-### `npm run build`
+### 外部 API (天気データ)
+*   **OpenWeatherMap API** (Current Weather Data)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📂 ディレクトリ構造 (Directory Structure)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```text
+src/
+├── components/          # 再利用可能なコンポーネント
+│   ├── WeatherCard.js   # 天気情報表示カード
+│   ├── SearchBar.js     # 都市検索バー
+│   └── NoteSection.js   # メモ入力・一覧エリア
+├── services/            # API通信モジュール
+│   └── weatherApi.js    # OpenWeatherMap との通信処理
+├── App.js               # メインコンポーネント
+├── index.css            # Tailwind CSS の読み込み
+└── index.js             # アプリの処理エントリーポイント
+```
+---
 
-### `npm run eject`
+## 💡 開発を始める際のアドバイス
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+まずは **OpenWeatherMap** の無料アカウントを作成し、**API Key** を取得することから始めてみてください。
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. [OpenWeatherMap](https://openweathermap.org/) に無料登録して API Key を発行する
+2. `.env` ファイルを作って API Key を設定する
+3. `fetch` または `axios` を使って React から天気データを取得してみる
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+開発中に困ったことや、コンポーネントの書き方に迷ったら気軽にお知らせください！
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ctrl shift p
+Simple Browser: Show
